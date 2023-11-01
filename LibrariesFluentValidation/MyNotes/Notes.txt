@@ -1,0 +1,2 @@
+﻿AutoMapper kütüphanesi bir nesneyi bir objeyi diğer bir objeye otomatik bir şekilde maplama işlemi gerçekleştiren bir kütüphanedir.
+Bir nesneyi bir nesneye neden eşleştirmemiz veya dönüştürmemiz gerekir? Direk Entity/Model'i dış dünyaya açmak değil userın işlem(dış dünyaya açılabilecek) yapabileceği propertyleri DataTransferObject(DTO) içerisinde belirtmek ile güvenlik açığı gibi durumların önüne geçmek.
