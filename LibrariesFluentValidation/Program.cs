@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LibrariesFluentValidation.Models;
 using LibrariesFluentValidation.FluentValidators;
-
+using AutoMapper;
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddFluentValidation(options =>
@@ -17,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(
         options.UseSqlServer(builder.Configuration["ConStr"]);
     });
 builder.Services.AddSingleton<IValidator<Customer>, CustomerValidator>();
+builder.Services.AddAutoMapper(typeof(Program));//parametre kýsmýna bir type vererek bir projeyi tara
 builder.Services.Configure<ApiBehaviorOptions>(options =>
 {
     options.SuppressModelStateInvalidFilter = true;

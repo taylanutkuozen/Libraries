@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using AutoMapper;
+using FluentValidation;
+using LibrariesFluentValidation.DTOs;
 using LibrariesFluentValidation.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,20 +12,23 @@ namespace LibrariesFluentValidation.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IValidator<Customer> _customerValidator; //Api Hata Mesajları için bir instance oluşturduk.
-        public CustomersApiController(AppDbContext context, IValidator<Customer> customerValidator)
+        private readonly IMapper _mapper;
+        public CustomersApiController(AppDbContext context, IValidator<Customer> customerValidator,IMapper mapper)
         {
             _context = context;
             _customerValidator = customerValidator;
+            _mapper = mapper;
         }
         // GET: api/CustomersApi
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        public async Task<ActionResult<IEnumerable<CustomerDto>>> GetCustomers()
         {
+            List<Customer> customers = await _context.Customers.ToListAsync();
             if (_context.Customers == null)
             {
                 return NotFound();
             }
-            return await _context.Customers.ToListAsync();
+            return _mapper.Map<List<CustomerDto>>(customers); //mapper instance'ının Map metodunu kullanarak önce bir hedef belirttik(CustomerDto), kaynak olarakta customers belirtmiş olduk.
         }
         // GET: api/CustomersApi/5
         [HttpGet("{id}")]
