@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 namespace LibrariesFluentValidation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CustomersApiController : ControllerBase
     {
@@ -29,6 +29,16 @@ namespace LibrariesFluentValidation.Controllers
                 return NotFound();
             }
             return _mapper.Map<List<CustomerDto>>(customers); //mapper instance'ının Map metodunu kullanarak önce bir hedef belirttik(CustomerDto), kaynak olarakta customers belirtmiş olduk.
+        }
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CustomerDtoTurkce>>> GetCustomersTurkce()
+        {
+            List<Customer> customers = await _context.Customers.ToListAsync();
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+            return _mapper.Map<List<CustomerDtoTurkce>>(customers); //mapper instance'ının Map metodunu kullanarak önce bir hedef belirttik(CustomerDto), kaynak olarakta customers belirtmiş olduk.
         }
         // GET: api/CustomersApi/5
         [HttpGet("{id}")]
