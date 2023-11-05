@@ -9,5 +9,13 @@
         public DateTime? BirthDay { get; set; }
         public IList<Address> Addresses { get; set; }
         public Gender Gender { get; set; }
+        //public string GetFullName()//Get koyarak başına otomatik map işlemi oldu
+        //{
+        //    return $"{CustomerName}---{CustomerMail}---{CustomerAge}"; 
+        //}
+        public string FullName2()
+        {
+            return $"{CustomerName}-{CustomerMail}-{CustomerAge}";
+        }
     }
 }

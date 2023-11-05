@@ -9,10 +9,12 @@ namespace LibrariesFluentValidation.Mapping
         {
             CreateMap<Customer, CustomerDto>().ReverseMap();//Bu metot generic olarak bir kaynak alır ve bir dönüştürecek. Kaynağın Customer bu kaynağı CustomerDto dönüştür.
             //CreateMap<CustomerDto, Customer>();=ReverseMap metodu bu görevi gerçekleştirebiliyor.
+            CreateMap<Customer, CustomerDto>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(x => x.FullName2()));//Manuel olarak method property mapping
             CreateMap<Customer, CustomerDtoTurkce>()
                 .ForMember(dest => dest.MusteriIsim, opt => opt.MapFrom(x => x.CustomerName))
-                .ForMember(dest=>dest.Eposta,opt=>opt.MapFrom(x=>x.CustomerMail))
-                .ForMember(dest=>dest.MusteriYas,opt=>opt.MapFrom(x=>x.CustomerAge));
+                .ForMember(dest => dest.Eposta, opt => opt.MapFrom(x => x.CustomerMail))
+                .ForMember(dest => dest.MusteriYas, opt => opt.MapFrom(x => x.CustomerAge));
         }
     }
 }

@@ -6,5 +6,6 @@
         public string CustomerName { get; set; }
         public string CustomerMail { get; set; }
         public int CustomerAge { get; set; }
+        public string FullName { get; set; }
     }
 }

@@ -19,6 +19,13 @@ namespace LibrariesFluentValidation.Controllers
             _customerValidator = customerValidator;
             _mapper = mapper;
         }
+        //[Route("MappingOrnek")]-->/[action] yazmadan böyle yapabilirdik
+        [HttpGet]
+        public IActionResult MappingOrnek()
+        {
+            Customer customer = new Customer { ID = 9, CustomerName = "Taylan", CustomerMail = "uozen972@gmail.com", CustomerAge = 27 };
+            return Ok(_mapper.Map<CustomerDto>(customer));
+        }
         // GET: api/CustomersApi
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CustomerDto>>> GetCustomers()
