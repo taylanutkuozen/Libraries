@@ -1,3 +1,4 @@
 ﻿AutoMapper kütüphanesi bir nesneyi bir objeyi diğer bir objeye otomatik bir şekilde maplama işlemi gerçekleştiren bir kütüphanedir.
 Bir nesneyi bir nesneye neden eşleştirmemiz veya dönüştürmemiz gerekir? Direk Entity/Model'i dış dünyaya açmak değil userın işlem(dış dünyaya açılabilecek) yapabileceği propertyleri DataTransferObject(DTO) içerisinde belirtmek ile güvenlik açığı gibi durumların önüne geçmek.
 Flattening=İçeriğini değiştirmek sadeleştirmek anlamına gelmektedir. Mapping olarak baktığımızda kompleks bir type'ı (class içerisinde type'ı class olan bir property) basit bir type'a (sadece propertylerden oluşan)dönüştürmek
+IncludeMembers method=Kompleks type'ları basit type'lara dönüştüren bir metottur.
