@@ -2,3 +2,18 @@
 Bir nesneyi bir nesneye neden eşleştirmemiz veya dönüştürmemiz gerekir? Direk Entity/Model'i dış dünyaya açmak değil userın işlem(dış dünyaya açılabilecek) yapabileceği propertyleri DataTransferObject(DTO) içerisinde belirtmek ile güvenlik açığı gibi durumların önüne geçmek.
 Flattening=İçeriğini değiştirmek sadeleştirmek anlamına gelmektedir. Mapping olarak baktığımızda kompleks bir type'ı (class içerisinde type'ı class olan bir property) basit bir type'a (sadece propertylerden oluşan)dönüştürmek
 IncludeMembers method=Kompleks type'ları basit type'lara dönüştüren bir metottur.
+Projection=Elimizde iki tane objemiz olsun. Biri source diğeri destination. Source tarafındaki bir propertyi, destination tarafında birden fazla property ile eşleşme işlemi gerçekleştirilmesi işlemidir.
+---------
+Örnek:
+public class EventDate
+{
+	public DateTime Date {get;set;}
+}
+public class EventDateDto
+{
+	public int Year {get;set}
+	public int Month {get;set}
+	public int Day {get;set}
+}
+---------
+docs.automapper.org/en/stable
