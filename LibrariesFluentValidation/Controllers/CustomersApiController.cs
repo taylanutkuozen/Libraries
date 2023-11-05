@@ -23,7 +23,7 @@ namespace LibrariesFluentValidation.Controllers
         [HttpGet]
         public IActionResult MappingOrnek()
         {
-            Customer customer = new Customer { ID = 9, CustomerName = "Taylan", CustomerMail = "uozen972@gmail.com", CustomerAge = 27 };
+            Customer customer = new Customer { ID = 9, CustomerName = "Taylan", CustomerMail = "uozen972@gmail.com", CustomerAge = 27 ,CreditCard=new CreditCard { Number = "123456789", ValidDate = DateTime.Now.AddDays(-100) } };
             return Ok(_mapper.Map<CustomerDto>(customer));
         }
         // GET: api/CustomersApi
