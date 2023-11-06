@@ -1,0 +1,4 @@
+﻿Rate Limit=Bir Api uygulamasında kullanmış olunan endpointler üzerinde sınırlama belirtilebileceği anlamına gelmektedir. Örnek olarak 1 saatte 100 tane request karşılayabilir bir sınırlama oldu.
+Api uygulamalarında neden RateLimit kullanmalıyız?
+Ölçeklenebilirlik (örnek 1 saat içinde 100 request karşılıyabiliyor ve her birine 1 saniyede cevap veriyor. diyelim 1 milyon istek oldu ve hala 1 saniyede cevap veriyor. Aynı sürede karşılık vermesi ölçeklenebilir demektir.) ve güvenlik.
+Bir Api uygulaması ve dış dünyayı açık endpoint var ise Rate Limit gereklidir.

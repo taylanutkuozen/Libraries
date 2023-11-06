@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34212.112
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibrariesFluentValidation", "LibrariesFluentValidation\LibrariesFluentValidation.csproj", "{6A727D5D-2E79-4BCD-872D-C31831E4DF42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibrariesFluentValidation", "LibrariesFluentValidation\LibrariesFluentValidation.csproj", "{6A727D5D-2E79-4BCD-872D-C31831E4DF42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimit.API", "RateLimit.API\RateLimit.API.csproj", "{F1498A1F-6B1E-4C87-AB5A-681EF5398BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6A727D5D-2E79-4BCD-872D-C31831E4DF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A727D5D-2E79-4BCD-872D-C31831E4DF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A727D5D-2E79-4BCD-872D-C31831E4DF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1498A1F-6B1E-4C87-AB5A-681EF5398BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1498A1F-6B1E-4C87-AB5A-681EF5398BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1498A1F-6B1E-4C87-AB5A-681EF5398BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1498A1F-6B1E-4C87-AB5A-681EF5398BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
