@@ -2,3 +2,15 @@
 Api uygulamalarında neden RateLimit kullanmalıyız?
 Ölçeklenebilirlik (örnek 1 saat içinde 100 request karşılıyabiliyor ve her birine 1 saniyede cevap veriyor. diyelim 1 milyon istek oldu ve hala 1 saniyede cevap veriyor. Aynı sürede karşılık vermesi ölçeklenebilir demektir.) ve güvenlik.
 Bir Api uygulaması ve dış dünyayı açık endpoint var ise Rate Limit gereklidir.
+github.com/stefanprodan/AspNetCoreRateLimit
+"EnableEndPoint" :  true -->tek tek endpoint üzerinden sınırlamalar yürütebiliyoruz.Şu endpointe şu kadar request şu endpointe şu kadar request olması oranı için true yapmak gerekiyor.
+"StackBlockedRequests":false --> diyelim ki dakikada 60 tane request yapılabilir saatte toplamda 1000 tane request yapılabilir. dakikada 61. request attı. sayılacak mı sayılmayacak mı bunun belirlenmesi.
+429-->çok fazla request yaptın
+"IpWhitelist": [ "127.0.0.1", "::1/10", "192.168.0.0/24" ] --> IpWhitelist ile endpoint'e bu IP'lerden gelecek sınırsız request olabilir. ipv4(local), ipv6(local),custom olarak Ip adresi("192.168.0...")
+ "GeneralRules": [
+      {
+        "Endpoint": "*",
+        "Period": "5s",
+        "Limit": 2
+      }
+    ]--> *=tüm endpointlere, 5s=5 saniyede 5m=5 dakikada, 5 saniyede 2 defa request
