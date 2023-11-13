@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-namespace RateLimit.API.Controllers
+namespace IPRateLimit.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

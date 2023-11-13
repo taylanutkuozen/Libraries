@@ -14,3 +14,5 @@ github.com/stefanprodan/AspNetCoreRateLimit
         "Limit": 2
       }
     ]--> *=tüm endpointlere, 5s=5 saniyede 5m=5 dakikada, 5 saniyede 2 defa request
+    "Endpoint": "*:/api/product", --> *=http method type karşılık gelmektedir.(get,post,delete,put)
+    "Endpoint": "*:/api/categories/*", --> 2nci *=categories altındaki action ları temsil etmektedir.
